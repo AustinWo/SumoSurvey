@@ -56,6 +56,8 @@ node server/app.js
 
 Open browser and navigate to http://localhost:5000
 
+### Server-Client Architecture
+![Architecture](screenshots/Architecture.png)
 
 ### Screenshots
 
