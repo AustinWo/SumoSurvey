@@ -51,8 +51,7 @@ angular.module('surveyCtrl', [])
 
     // answer a survey
     vm.submit = function () {
-      Survey.vote(vm.radioValue, vm.qId).then(function (response) {
-      });
+      Survey.vote(vm.radioValue, vm.qId);
       vm.responded = true;
     };
 
