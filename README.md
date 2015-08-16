@@ -14,7 +14,7 @@
 - Bootstrap CSS
 
 ## Creator
-- Austin Worachet [blog](https://austinwo.com)
+- Austin Worachet [blog](http://austinwo.com)
 
 ## Development
 
@@ -34,12 +34,17 @@ mysql -u [your username] -p
 Enter Password:  [your password]
 ```
 
-In server/app.js, set your mysql username and password in the configuration object
-
 ```sh
 create database survey;
 use survey;
 ```
+
+### In server/app.js, set your mysql username and password in the configuration object
+
+```sh
+var sequelize = new Sequelize('survey', 'yourMySQLUsername', 'yourMySQLPassword');
+```
+
 When the app is started (node app.js), the schema will be created so long as this setup has been performed.
 
 
