@@ -14,7 +14,6 @@ module.exports = {
 
   // admin login
   login: function (req, res) {
-    var userModel;
     db.Users.findOne({where: {username: req.body.username, password: req.body.password}})
       .then(function (u) {
         if (u) {
@@ -28,9 +27,9 @@ module.exports = {
           res.send(401);
         }
       }).catch(function(error) {
-        console.log('failed to log you in');
+        console.log('failed to log you in ', error);
         res.send(401);
-      })
+      });
   },
 
   getAllQuestionsAndAnswers: function (req, res) {
@@ -55,19 +54,18 @@ module.exports = {
 
   // handle survey response (vote) to a particular question and save to the database
   vote: function (req, res) {
-    var answeredId = req.body.aId;
     var qId = req.body.qId;
     db.Answers.findOne({ where: {
       aId: req.body.aId
     }}).then(function(answer) {
       // increase the answer_count by one
-      answer.increment({answer_count: 1})
+      answer.increment({answer_count: 1});
     }).then(function () {
       console.log('incremented answer count by 1');
       var cookies = new Cookies(req, res, ['austin','sumo']);
-      var cookieValue = 'answered'
+      var cookieValue = 'answered';
       cookies.set(qId,cookieValue, {httpOnly: false, overwrite: true});
-      console.log('setting cookie ',qId ,'to ', cookieValue)
+      console.log('setting cookie ',qId ,'to ', cookieValue);
       res.sendStatus(200);
     });
   },
@@ -81,7 +79,7 @@ module.exports = {
       var totalQuestions = result.count;
 
       var generateRandomQId = function () {
-        return Math.ceil(Math.random()*result.count);;
+        return Math.ceil(Math.random()*result.count);
       };
       // using cookies stored on client's brower to check for unanswered survey question
       var randomQId = generateRandomQId();
@@ -108,8 +106,8 @@ module.exports = {
           db.Answers.findAll({where: {qId: randomQId}})
           .then(function (ans) {
             res.send({ q: q, ans: ans});
-          })
-        })
+          });
+        });
       }
     });
   },
@@ -139,16 +137,16 @@ module.exports = {
       // grab the id of the survey question created
       newQuestionId = question.dataValues.qId;
       console.log(question.get({plain: true}));
-      console.log(created)
-      choiceArr.forEach((function(choice) {
+      console.log(created);
+      choiceArr.forEach(function(choice) {
         // add answers for the survey question created
         db.Answers.findOrCreate({where: {answer: choice, qId: newQuestionId}})
         .spread(function(choiceAdded, created) {
           console.log(choiceAdded.get({plain: true}));
           console.log(created);
-        })
-      }))
-    }).then(function(done) {
+        });
+      });
+    }).then(function() {
         res.sendStatus(200);
     });
   }
