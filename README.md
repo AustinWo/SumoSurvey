@@ -48,11 +48,12 @@ var sequelize = new Sequelize('survey', 'yourMySQLUsername', 'yourMySQLPassword'
 When the app is started (server/index.js), the schema will be created so long as this setup has been performed.
 
 
-Run the app in the browser
+
 From root directory:
 ```sh
 node server/index.js
 ```
+
 Open browser and navigate to http://localhost:5000
 
 
