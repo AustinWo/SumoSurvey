@@ -47,7 +47,8 @@ Users.sync({force: true}).then(function() {
   Users.create({username: 'admin', password: 'admin'});
   console.log('created Users table');
   }).catch(function(error) {
-    throw new Error('error creating user for Users table: try dropping all the tables in your MySQL')
+    console.log(error);
+    throw new Error('error creating user for Users table: try dropping all the tables in your MySQL');
   });
 
 Questions.sync({force: true}).then(function() {
@@ -58,7 +59,8 @@ Questions.sync({force: true}).then(function() {
   Questions.create({question: 'Do you love SumoSurvey?'});
   console.log('created Questions table');
   }).catch(function(error) {
-    throw new Error('error creating questions for Questions table: try dropping all the tables in your MySQL')
+    console.log(error);
+    throw new Error('error creating questions for Questions table: try dropping all the tables in your MySQL');
   });
 
 Answers.sync({force: true}).then(function() {
@@ -77,5 +79,6 @@ Answers.sync({force: true}).then(function() {
   Answers.create({answer: 'I\'d rather not see another survey', qId: 4});
   console.log('created Answers table');
   }).catch(function(error) {
-  throw  new Error('error creating answers for Answers table: try dropping all the tables in your MySQL');
+    console.log(error);
+    throw  new Error('error creating answers for Answers table: try dropping all the tables in your MySQL');
   });
