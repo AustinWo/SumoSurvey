@@ -20,9 +20,9 @@ angular.module('addSurveyCtrl', [])
       var formChoies = [];
       vm.choices.forEach(function (e) {
         formChoies.push(e.inputChoice);
-      })
+      });
       // call Admin Factory to create a new survey question
-      Admin.createNewSurvey(vm.inputQuestion, formChoies).then(function(response){
+      Admin.createNewSurvey(vm.inputQuestion, formChoies).then(function(){
         // reset the input fields
         vm.choices = [{id: 'choice1'}, {id: 'choice2'}];
         vm.inputQuestion = '';
