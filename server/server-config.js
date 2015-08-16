@@ -3,10 +3,7 @@ var express = require('express');
 var morgan = require('morgan');
 // bodyParser to parse json from http request
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
 var cookieParser = require('cookie-parser');
-var Sequelize = require('sequelize');
-// var sequelize = new Sequelize('survey', 'root', '');
 var controller = require('./controllers.js');
 
 
