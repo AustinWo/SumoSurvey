@@ -76,6 +76,6 @@ Answers.sync({force: true}).then(function() {
   Answers.create({answer: 'Meh', qId: 4});
   Answers.create({answer: 'I\'d rather not see another survey', qId: 4});
   console.log('created Answers table');
-}).catch(function(error) {
+  }).catch(function(error) {
   throw  new Error('error creating answers for Answers table: try dropping all the tables in your MySQL');
-});
+  });
