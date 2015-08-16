@@ -1,9 +1,8 @@
 angular.module('surveyCtrl', [])
 
-  .controller('SurveyController', ['Survey', '$state' , function (Survey, $state) {
+  .controller('SurveyController', ['Survey', function (Survey) {
 
     var vm = this;
-    vm.randomQuestion;
     vm.answers = [];
     vm.show = true;
     vm.responded = false;
