@@ -1,0 +1,17 @@
+<div class="survey-div" ng-controller="LoginController as login">
+  <div clas="container">
+    <div class="col-md-12">
+      <div class="survey-div col-md-8 col-md-offset-2 text-center">
+        <h2>Admin Login</h2>
+        <form ng-submit="login.doLogin()">
+          <h4 class="text-left">Demo username: admin</h4>
+          <h4 class="text-left">Demo password: admin</h4>
+          <input class="form-control" type="text" ng-model="login.username" placeholder="username" required></input>
+          <input class="form-control" type="password" ng-model="login.password" placeholder="password" required></input>
+          <p class="text-danger" ng-if="login.loginFail">Wrong username & password, please try again</p>
+          <input class="btn btn-primary" type="submit"></input>
+        </form>
+      </div>
+    </div>
+  </div>
+<div>
