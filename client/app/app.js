@@ -56,7 +56,7 @@ SumoSurveyApp.config(function ($stateProvider, $urlRouterProvider) {
     data: {
       requireLogin: true
     }
-  })
+  });
 });
 
 SumoSurveyApp.run(function ($rootScope, $window, $location, $state) {

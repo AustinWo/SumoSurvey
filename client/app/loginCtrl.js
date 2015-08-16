@@ -15,7 +15,7 @@ angular.module('loginCtrl', [])
         // redirect to admin page
         $state.go('admin');
       }).catch(function (error) {
-        console.log('login fail');
+        console.log(error.status, 'login fail');
         vm.loginFail = true;
       });
     };
