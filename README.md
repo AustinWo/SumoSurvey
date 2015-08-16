@@ -1,12 +1,11 @@
 # SumoSurvey
 
-> Survey App
-
-$$ Features
+> Features
 
 - Users can respond to random survey questions.
-- Questions that are already answered are not shown again to that user. (Using cookies stored on users' brower)
-- Admin can log in to view survey responses and add survey questions/ answers. (Using jwt session)
+- Questions that are already answered are not shown again to that user.
+- Admin can log in to view survey responses.
+- Admin can add survey questions/ answers.
 
 ## Stack
 - Node.js/Express server
@@ -15,7 +14,7 @@ $$ Features
 - Bootstrap CSS
 
 ## Creator
-- Austin Worachet
+- Austin Worachet [blog](https://austinwo.com)
 
 ## Development
 
@@ -35,7 +34,7 @@ mysql -u [your username] -p
 Enter Password:  [your password]
 ```
 
-1. In server/app.js, set your mysql username and password in the configuration object
+In server/app.js, set your mysql username and password in the configuration object
 
 ```sh
 create database survey;
@@ -44,9 +43,9 @@ use survey;
 When the app is started (node app.js), the schema will be created so long as this setup has been performed.
 
 
-1. Run the app in the browser
+Run the app in the browser
 From root directory:
 ```sh
-node index.js
+node server/index.js
 ```
-1. Open browser and navigate to http://localhost:5000
+Open browser and navigate to http://localhost:5000
