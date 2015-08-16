@@ -61,7 +61,7 @@ module.exports = {
       aId: req.body.aId
     }}).then(function(answer) {
       // increase the answer_count by one
-      db.answer.increment({answer_count: 1})
+      answer.increment({answer_count: 1})
     }).then(function () {
       console.log('incremented answer count by 1');
       var cookies = new Cookies(req, res, ['austin','sumo']);
