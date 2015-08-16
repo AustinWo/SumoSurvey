@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var cookieParser = require('cookie-parser');
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('survey', 'root', '');
+// var sequelize = new Sequelize('survey', 'root', '');
 var controller = require('./controllers.js');
 
 
@@ -18,14 +18,12 @@ app.use(cookieParser());
 
 // serve files in client folder
 app.use(express.static(__dirname + './../client'));
-sequelize.sync().then(function (err) {
-  app.get('/questions', controller.getAllQuestions);
-  app.get('/answers', controller.getAnswers);
-  app.get('/getRandomQuestion', controller.getRandomQuestion);
-  app.post('/resetCookies', controller.resetCookies);
-  app.post('/vote', controller.vote);
-  app.post('/login', controller.login);
-  app.post('/createNewSurvey', controller.createNewSurvey);
-});
+app.get('/questions', controller.getAllQuestions);
+app.get('/answers', controller.getAnswers);
+app.get('/getRandomQuestion', controller.getRandomQuestion);
+app.post('/resetCookies', controller.resetCookies);
+app.post('/vote', controller.vote);
+app.post('/login', controller.login);
+app.post('/createNewSurvey', controller.createNewSurvey);
 
 module.exports = app;
