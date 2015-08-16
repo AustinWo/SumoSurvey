@@ -33,8 +33,8 @@ angular.module('surveyFactory', [])
       }
     }).then(function(response) {
       return response.data;
-    })
-  }
+    });
+  };
 
   // ajax request to delete all cookies
   surveyFactory.deleteAllCookies = function () {
@@ -47,8 +47,8 @@ angular.module('surveyFactory', [])
       }
     }).then(function(response) {
       return response.data;
-    })
-  }
+    });
+  };
 
   return surveyFactory;
 
