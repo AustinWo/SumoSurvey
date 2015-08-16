@@ -10,7 +10,7 @@ angular.module('adminCtrl', [])
       vm.questionsArr = response;
       vm.questionsArr.forEach(function (q) {
         vm.questions.push(q.question);
-      })
+      });
     });
 
   }]);
