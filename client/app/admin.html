@@ -1,0 +1,17 @@
+<div class="admin-div" ng-controller="AdminController as admin">
+  <div clas="container">
+    <div class="col-md-12">
+      <div class="survey-div col-md-8 col-md-offset-2">
+        <h2>Survey Reponse</h2>
+        <input class="form-control" ng-model="search" placeholder="search question"/>
+        <h2 class="question" ng-repeat="question in admin.questionsArr | filter : search">{{question.question}}
+          <div ng-controller="AnswerController as answer">
+            <ul>
+              <li class="answer" ng-repeat="answer in answer.answers | filter: {qId: question.qId} | orderBy:answer.answer_count">{{answer.answer}}: {{answer.answer_count}}</li>
+            </ul>
+          </div>
+        </h2>
+      </div>
+    </div>
+  </div>
+<div>
