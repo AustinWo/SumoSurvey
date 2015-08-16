@@ -4,3 +4,5 @@ node_modules
 client/lib
 bower_components
 config.js
+npm-debug.log
+/*.env
