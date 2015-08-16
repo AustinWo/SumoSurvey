@@ -58,7 +58,7 @@ Open browser and navigate to http://localhost:5000
 
 ### Screenshots
 
-[Survey](screenshots/1.png)
-[Admin Login](screenshots/2.png)
-[Survey Responses](screenshots/3.png)
-[Add Survey Question](screenshots/4.png)
+![Survey](screenshots/1.png)
+![Admin Login](screenshots/2.png)
+![Survey Responses](screenshots/3.png)
+![Add Survey Question](screenshots/4.png)
