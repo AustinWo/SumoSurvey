@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+
+    <title>SumoSurvey</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+
+
+    <!-- Angular Files -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/app.js"></script>
+    <script src="app/surveyCtrl.js"></script>
+    <script src="app/adminCtrl.js"></script>
+    <script src="app/answerCtrl.js"></script>
+    <script src="app/addSurveyCtrl.js"></script>
+    <script src="app/loginCtrl.js"></script>
+
+    <!-- Factories -->
+    <script src="app/surveyFactory.js"></script>
+    <script src="app/adminFactory.js"></script>
+
+
+  </head>
+  <body ng-app="SumoSurveyApp">
+    <div>
+      <nav class="row navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="nav navbar-header">
+            <a class="navbar-brand" href="http://localhost:5000/#/">SumoSurvey</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <a class="navbar-brand" ng-href="http://localhost:5000/#/login" ng-hide="adminLoggedIn">Admin Login</a>
+            <a class="navbar-brand" ng-href="http://localhost:5000/#/admin" ng-show="adminLoggedIn">Dashboard</a>
+            <a class="navbar-brand" ng-href="http://localhost:5000/#/addSurvey" ng-show="adminLoggedIn">Add survey</a>
+            <a class="navbar-brand" ng-href="http://localhost:5000/#/logout" ng-show="adminLoggedIn">Logout</a>
+          </ul>
+        </div>
+      </nav>
+       <!-- angular views: where all the angular views render -->
+      <div ui-view class="row"></div>
+    </div>
+    <!-- Bootstrap -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
