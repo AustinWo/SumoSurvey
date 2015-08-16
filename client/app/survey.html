@@ -1,0 +1,34 @@
+<div class="survey-div" ng-controller="SurveyController as survey">
+  <div clas="container">
+    <div class="col-md-12">
+      <!-- <h1 class="text-center">SumoSurvey</h1> -->
+      <div class="survey-div col-md-8 col-md-offset-2 text-center">
+
+        <!-- display a random survey question -->
+        <div ng-show="!survey.show">
+          <h2>You have completed all survey questions.</h2>
+          <h2>Thank you for participation!</h2>
+          <button class="btn btn-warning" ng-click="survey.resetCookies()">reset the cookies & take the surveys again</button>
+        </div>
+
+        <!-- display user response to the survey question -->
+        <div ng-show="survey.responded">
+          <h2>Thank you for your response!</h2>
+          <h3>Love, SumoSurvey</h3>
+          <button class="btn btn-info" ng-click="survey.nextQuestion()">Take another survey</button>
+        </div>
+        <div class="form-group" ng-show="survey.show && !survey.responded">
+          <h1>{{ survey.randomQuestion }}</h1>
+
+          <form class="radio" ng-submit="survey.submit()">
+            <label class="center-block" ng-repeat="answer in survey.answers">
+              <!-- disable the button until one choice is selected -->
+              <input type="radio" ng-model="survey.radioValue" value="{{answer.aId}}" onClick="document.getElementById('answerSubmit').disabled = false">{{answer.answer}}</input>
+           </label>
+          <button id="answerSubmit" class="btn btn-primary" type="submit" value="submit" disabled>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
