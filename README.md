@@ -20,6 +20,15 @@
 
 ### Installing Dependencies
 
+Make sure you have Node.js, npm, Bower and MySQL installed.
+
+To install Node.js & npm: https://docs.npmjs.com/getting-started/installing-node
+
+To install Bower:
+```sh
+sudo npm install -g bower
+```
+
 From within the root directory:
 ```sh
 * sudo npm install
