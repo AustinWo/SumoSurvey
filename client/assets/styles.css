@@ -1,0 +1,25 @@
+body {
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica;
+  font-size: 25px;
+}
+.answer {
+  margin: 10px;
+  font-size: 20px;
+}
+.surveyLabel {
+  font-size: 20px;
+}
+ul li {
+  list-style-type: none;
+  font-size: 30px;
+}
+input[type=radio] {
+  padding-top: 20px;
+  margin: 12px;
+}
+label {
+  margin-top: 5px;
+}
+button {
+  margin-top: 20px;
+}
