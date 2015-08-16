@@ -45,7 +45,7 @@ use survey;
 var sequelize = new Sequelize('survey', 'yourMySQLUsername', 'yourMySQLPassword');
 ```
 
-When the app is started (node app.js), the schema will be created so long as this setup has been performed.
+When the app is started (server/index.js), the schema will be created so long as this setup has been performed.
 
 
 Run the app in the browser
