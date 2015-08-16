@@ -1,4 +1,14 @@
 var Sequelize = require('sequelize');
+
+// ===========================================
+// sequelize database initialization
+// ===========================================
+
+// change to your database username and password here
+// database name: 'survey'
+// username: 'root'
+// password: none
+
 var sequelize = new Sequelize('survey', 'root', '');
 
 var Users = exports.Users = sequelize.define('Users', {
@@ -27,18 +37,6 @@ var Answers =  exports.Answers = sequelize.define('Answers', {
 }, {
   timestamps: false
 });
-
-// var db = require(./models.js);
-// var Sequelize = require('sequelize');
-
-// ===========================================
-// sequelize database initialization
-// ===========================================
-
-// change to your database username and password here
-// database name: 'survey'
-// username: 'root'
-// password: none
 
 // define the Users table
 
