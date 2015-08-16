@@ -1,0 +1,21 @@
+<div class="add-div" ng-controller="AddSurveyController as add">
+  <div clas="container">
+    <div class="col-md-12">
+      <div class="survey-div col-md-8 col-md-offset-2">
+        <div class="surveyForm" ng-submit="add.createNewSurvey()">
+          <form>
+            <h2>Add a new survey question</h2>
+            <h5>If you ask a question which already exists, any new choices will be added to the same survey</h5>
+            <input type="text" class="form-control" ng-model="add.inputQuestion" placeholder="Survey question" required/>
+            <label>Answer choices</label>
+            <div class="form-group" data-ng-repeat="choice in add.choices">
+              <input class="form-control" type="text" ng-model="choice.inputChoice" placeholder="Enter choice" required>
+              <button class="btn btn-warning" type="button" ng-show="add.showAddChoice(choice)" ng-click="add.addNewChoice()">Add another choice</button>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
