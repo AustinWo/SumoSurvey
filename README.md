@@ -39,19 +39,19 @@ create database survey;
 use survey;
 ```
 
-### In server/app.js, set your mysql username and password in the configuration object
+### In server/db/models.js, set your mysql username and password in the configuration object
 
 ```sh
 var sequelize = new Sequelize('survey', 'yourMySQLUsername', 'yourMySQLPassword');
 ```
 
-When the app is started (server/index.js), the schema will be created so long as this setup has been performed.
+When the app is started (server/app.js), the schema will be created so long as this setup has been performed.
 
 
 
 From root directory:
 ```sh
-node server/index.js
+node server/app.js
 ```
 
 Open browser and navigate to http://localhost:5000
