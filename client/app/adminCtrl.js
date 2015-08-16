@@ -3,7 +3,6 @@ angular.module('adminCtrl', [])
   .controller('AdminController', ['Admin', function (Admin) {
 
     var vm = this;
-    vm.questionsArr;
     vm.questions = [];
 
     // use Admin factory to make ajax request to get all survey questions & responses
