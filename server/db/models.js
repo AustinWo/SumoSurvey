@@ -4,12 +4,17 @@ var Sequelize = require('sequelize');
 // sequelize database initialization
 // ===========================================
 
+//  local MySQL db
 // change to your database username and password here
 // database name: 'survey'
 // username: 'root'
 // password: none
 
 var sequelize = new Sequelize('survey', 'root', '');
+
+// Deploy with heroku:
+// Use Postgres db
+
 
 var Users = exports.Users = sequelize.define('Users', {
   uId: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
